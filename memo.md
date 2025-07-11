@@ -38,4 +38,22 @@ argc == 6の場合だけ、最後の食べた回数カウントを導入する�
 [IBM mutex](https://www.ibm.com/docs/ja/aix/7.2.0?topic=p-pthread-mutex-init-pthread-mutex-destroy-subroutine)
 
 thread配列と、mutex配列を用意して、そこを人数分初期化するのが最初にやるべきことかなぁ。
+→人数がわからんから、可変長で用意しなあかんかぁ。面倒くさいなぁ。
+
+Threadに対する処理を関数にしておいて、Whileで一斉に発火させるのが良さそう。
+各ThreadがアクセスできるMutexはx - 1, xかな。
+それぞれにアクセス出来ない場合はThinkingを続ける。
+常時アクセスを試すとかは無理そうかなぁ。
+
+最小公倍数のタイミングでアクセスを試みる、かな。
+
+Thinking -> eating -> sleepingの順番で状態を変化させる。
+
+thinlingの状態で、最小公倍数のアクセスタイミングが来たときに両隣のMutexを確認して、
+空いている場合のみEatingに移行する。
+Eatingで、規定の時間を経過したら、Sleepingに移行する。
+Sleepingで、規定の時間を経過したら、Thinkingに移行する。
+
+結局、互いに素な時間が来たら最小公倍数1やから、毎秒アクセスするし、どのみち常時アクセスにせなあかんか。
+
 
