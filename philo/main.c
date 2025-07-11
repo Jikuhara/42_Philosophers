@@ -6,7 +6,7 @@
 /*   By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 01:36:25 by kei2003730        #+#    #+#             */
-/*   Updated: 2025/07/11 13:25:09 by kei2003730       ###   ########.fr       */
+/*   Updated: 2025/07/11 13:31:16 by kei2003730       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int main(int argc, char const *argv[])
 	time_to_sleep_ms = atoi(argv[4]);
 	if (argc == 6)
 		number_of_times_each_philosopher_must_eat = atoi(argv[5]);
-	
 
+ 
 	printf("Hello World!");
 	return (0);
 }
