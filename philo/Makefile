@@ -6,7 +6,7 @@
 #    By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:45:00 by kei2003730        #+#    #+#              #
-#    Updated: 2025/07/11 11:33:08 by kei2003730       ###   ########.fr        #
+#    Updated: 2025/07/11 11:47:59 by kei2003730       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@
 #> variables
 #-----------------------------------------------------------------------------
 
-NAME		:= Philosopher
+NAME		:= philosophers
 
 #─ compile config ────────────────────────────────────────────────────────────
 
 CC			:= cc
-CFLAGS	:= -Wall -Wextra -Werror
+CFLAGS		:= -Wall -Wextra -Werror
 
 #─ directory name ────────────────────────────────────────────────────────────
 
@@ -27,7 +27,7 @@ OBJDIR		:= obj
 
 #─ sources & objects ─────────────────────────────────────────────────────────
 
-SRCS		:= main.cpp 
+SRCS		:= main.c
 OBJS		:= $(SRCS:%.c=$(OBJDIR)/%.o)
 
 #─ colors ────────────────────────────────────────────────────────────────────
@@ -52,7 +52,7 @@ $(NAME): $(OBJS)
 	@echo "    $(NAME) created successfully!"
 	@echo "=========================================$(RESET)"
 
-$(OBJDIR)/%.o: %.cpp
+$(OBJDIR)/%.o: %.c
 	@mkdir -p $(OBJDIR)
 	@echo "Compiled ✅ $(WHITE)$(BOLD) $< $(RESET)"
 	@$(CC) $(CFLAGS) -c -o $@ $<
