@@ -57,3 +57,4 @@ Sleepingで、規定の時間を経過したら、Thinkingに移行する。
 結局、互いに素な時間が来たら最小公倍数1やから、毎秒アクセスするし、どのみち常時アクセスにせなあかんか。
 
 
+[mutex参考サイト](https://qiita.com/ryo_manba/items/e48faf2ba84f9e5d31c8)
