@@ -58,3 +58,9 @@ Sleepingで、規定の時間を経過したら、Thinkingに移行する。
 
 
 [mutex参考サイト](https://qiita.com/ryo_manba/items/e48faf2ba84f9e5d31c8)
+[mutex だえう](https://daeudaeu.com/c_mutex/)
+
+時間の概念も必要や－－ん。。
+面倒くさいなぁ。。
+
+

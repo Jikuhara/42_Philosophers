@@ -6,7 +6,7 @@
 /*   By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 01:36:25 by kei2003730        #+#    #+#             */
-/*   Updated: 2025/07/11 14:12:11 by kei2003730       ###   ########.fr       */
+/*   Updated: 2025/07/11 14:14:45 by kei2003730       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ int free_all(philo_info_t *info, pthread_t *philos, pthread_mutex_t *forks)
 		free(forks);
 	return (0);
 }
-int test(void)
-{}
 
 int prepare_forks(philo_info_t *info, pthread_mutex_t *forks)
 {
@@ -45,13 +43,18 @@ int prepare_forks(philo_info_t *info, pthread_mutex_t *forks)
 	i = 0;
 	while (i < info->philo_num)
 	{
-		if (pthread_create(&philos[i], NULL, test, NULL) == 0)
+		if (pthread_mutex_init(&forks[i], NULL) != 0)
 		{
 			return (1);
 		}
 		i++;
 	}
 	return (0);
+}
+
+int test(void *arg)
+{
+	
 }
 
 int prepare_philos(philo_info_t *info, pthread_t *philos)
@@ -97,6 +100,7 @@ int main(int argc, char const *argv[])
 	prepare_philos(info, philos);
 
 	printf("Hello World!");
+	free_all(info, philos, forks);
 	return (0);
 }
 
