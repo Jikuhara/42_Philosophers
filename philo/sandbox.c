@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   sandbox.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/11 11:39:50 by kei2003730        #+#    #+#             */
-/*   Updated: 2025/07/11 12:51:50 by kei2003730       ###   ########.fr       */
+/*   Created: 2025/07/11 12:24:45 by kei2003730        #+#    #+#             */
+/*   Updated: 2025/07/11 12:48:39 by kei2003730       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-# define PHOLO_H
+#include "philo.h"
 
-#include <stdio.h>
-#include <pthread.h>
-#include <unistd.h>
+void *test(void *arg)
+{
+   printf("test\n");
+   sleep(1);
+}
 
-#endif
+int main(void)
+{
+   pthread_t thread;
+   void *retval;
+
+   if (pthread_create(&thread, NULL, test, NULL) != 0)
+       return (0);
+   pthread_join(thread, &retval);
+   pthread_detach(thread);
+}
