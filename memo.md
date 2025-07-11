@@ -63,4 +63,19 @@ Sleepingで、規定の時間を経過したら、Thinkingに移行する。
 時間の概念も必要や－－ん。。
 面倒くさいなぁ。。
 
+Forkを下ろすって動作は無いんか。
+やから一回持っちゃうと、両方の手にForkを持つまではずっと持ち続けるんか。
+なるほど～～。
 
+Forkを持つ = mutexをlockする
+Forkを下ろす = mutexをunlockする
+か。おもろい。
+
+アクセスする = mutex_lockを呼ぶやな。
+右手持つ→左手持つ→持てなかったらすぐにunlockする？
+でいいのか？？？ちゃいそう。
+
+
+[Thread解説 Youtube英語](https://www.youtube.com/watch?v=d9s_d28yJq0&list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2&ab_channel=CodeVault)
+めっちゃわかりやすそう。
+一旦これ見て手動かすか。
