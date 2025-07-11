@@ -35,4 +35,7 @@ argc == 6の場合だけ、最後の食べた回数カウントを導入する�
 1フォークを1mutexに対応させる。
 1philoを1threadに対応させる。
 
- 
+[IBM mutex](https://www.ibm.com/docs/ja/aix/7.2.0?topic=p-pthread-mutex-init-pthread-mutex-destroy-subroutine)
+
+thread配列と、mutex配列を用意して、そこを人数分初期化するのが最初にやるべきことかなぁ。
+
